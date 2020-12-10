@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstTime">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.814">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/memory_text"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:fontFamily="serif-monospace" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            app:fontFamily="serif-monospace"  />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How to play"
+            app:fontFamily="serif-monospace"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fontFamily="serif-monospace"
+            android:text="Click tiles to turn them over."
+            android:textSize="15sp"
+            android:drawablePadding="10dp"
+            app:drawableStartCompat="@drawable/ic_baseline_gamepad_24" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fontFamily="serif-monospace"
+            android:text="Match the goldfish pairs to win."
+            android:textSize="15sp"
+            android:drawablePadding="10dp"
+            app:drawableStartCompat="@drawable/ic_baseline_gamepad_24" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Settings"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="serif-monospace"  />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:id="@+id/playSound"
+            android:checked="true"
+            app:fontFamily="serif-monospace"
+            android:text="Play sound" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_play_arrow_24"
+            android:layout_height="wrap_content"
+            android:text="PLAY"
+            app:fontFamily="serif-monospace"
+            android:onClick="play"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/ic_baseline_play_arrow_24"
+            />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

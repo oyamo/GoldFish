@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:text="High score!"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:id="@+id/numberOfTurns"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:textSize="28sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeElapsed"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:id="@+id/longestMatchSequences"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="350dp"
+        android:layout_margin="10dp"
+        android:text="Continue"
+        android:id="@+id/replay"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

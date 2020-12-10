@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:text="Play"
+        style="@style/buttonStyle"
+        android:id="@+id/play"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:text="High scores"
+        style="@style/buttonStyle"
+        android:id="@+id/highScores"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:text="Achievements"
+        style="@style/buttonStyle"
+        android:id="@+id/achievements"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:text="About"
+        style="@style/buttonStyle"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

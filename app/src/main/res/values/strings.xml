@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Gold  Fish</string>
+    <string name="memory_text">MEMORY OF A GOLDFISH - version: 1.0</string>
+    <string name="replay">Replay</string>
+</resources>
