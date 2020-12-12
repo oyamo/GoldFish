@@ -22,12 +22,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.util.*
 
 class FishAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var fishes = listOf<Fish>()
     private var height = 0
     private var points = 0
+    private var successes = 0x0;
     private val POINT_INTERVALS = 10
     private var time = System.currentTimeMillis()
     private var turns = 0
@@ -144,6 +146,9 @@ class FishAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         fishItem.setOnClickListener {
 
             lateinit var mp: MediaPlayer
+            var gameProgress = GameProgress(context=context);
+
+
 
             // Increase the number of turns by one
             turns += 1
@@ -180,17 +185,45 @@ class FishAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 mp.start()
 
                 val closedFish = fishes.filter { it.hasBeenTapped }
-                if (closedFish.size == 20) {
-                    context.startActivity(Intent(context, Showcase::class.java))
+                val maxPoints = 40 + (Math.random() * POINT_INTERVALS).toInt()
+                if (points >= maxPoints) {
+                    gameProgress.progress
                 }
+                if(gameProgress.fewestTurns == 0 ){
+                    gameProgress.fewestTurns = turns
+                } else if(gameProgress.fewestTurns > turns) {
+                    gameProgress.fewestTurns = turns
+                }
+
+                val timeTaken = ((System.currentTimeMillis() - time) / 1000).toInt()
+                if(gameProgress.shortestTime == 0 ) {
+                    gameProgress.shortestTime  = timeTaken
+                } else if(gameProgress.shortestTime > timeTaken) {
+                    gameProgress.shortestTime = timeTaken
+                }
+
+                gameProgress.longestProgress += arrayListOf(1,0,0,0,1).random()
 
                 Toast.makeText(context, "Congrats", Toast.LENGTH_SHORT).show()
 
                 points += 10 + (Math.random() * POINT_INTERVALS).toInt()
 
-                val maxPoints = 40 + (Math.random() * POINT_INTERVALS).toInt()
+                if(!gameProgress.firstTimeLucky){
+                    gameProgress.firstTimeLucky = true
+                }
 
-                if (points >= maxPoints) {
+                successes++
+                if (successes == 3 && turns < 7) {
+                    gameProgress.threeInArow = true
+                }
+
+                if (successes == 5 && turns < 15) {
+                    gameProgress.fiveInArow = true
+                }
+
+
+
+                if (closedFish.size == 20) {
                     // Dialog for displaying the  alert
                     val dialog = Dialog(context)
 
@@ -198,7 +231,7 @@ class FishAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     dialog.setContentView(R.layout.high_score)
 
                     // Set the title which will be visible to the user
-                    dialog.setTitle("High score")
+                    dialog.setTitle("Game over")
 
 
                     val gameProgress = GameProgress(context)
@@ -220,6 +253,7 @@ class FishAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                     continueButton.setOnClickListener {
                         dialog.dismiss()
+                        context.startActivity(Intent(context, GameActivity::class.java))
                     }
                     dialog.show()
 

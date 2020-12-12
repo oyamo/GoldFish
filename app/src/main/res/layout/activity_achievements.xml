@@ -24,6 +24,7 @@
             android:layout_weight="1.5"
             android:background="#f00"
             android:padding="10dp"
+            android:id="@+id/firstTimeLucky"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/fish_0"
@@ -59,6 +60,7 @@
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:padding="10dp"
+            android:id="@+id/threeInArow"
             android:src="@drawable/fish_0"
             android:layout_height="100dp"/>
         <LinearLayout
@@ -92,6 +94,7 @@
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:padding="10dp"
+            android:id="@+id/fiveInArow"
             android:src="@drawable/fish_0"
             android:layout_height="100dp"/>
         <LinearLayout

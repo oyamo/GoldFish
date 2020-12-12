@@ -43,29 +43,10 @@ class GameActivity : AppCompatActivity() {
 
         // Draw the game grid away from the main Thread
         GlobalScope.launch(Dispatchers.Main) {
+
             var fishes = mutableListOf<Fish>()
-            var fishPics = listOf(
-                R.drawable.fish_1,
-                R.drawable.fish_2,
-                R.drawable.fish_3,
-                R.drawable.fish_4,
-                R.drawable.fish_5,
-                R.drawable.fish_6,
-                R.drawable.fish_7,
-                R.drawable.fish_8,
-                R.drawable.fish_9,
-                R.drawable.fish_10,
-                R.drawable.fish_11,
-                R.drawable.fish_12,
-                R.drawable.fish_13,
-                R.drawable.fish_14,
-                R.drawable.fish_15,
-                R.drawable.fish_16,
-                R.drawable.fish_17,
-                R.drawable.fish_18,
-                R.drawable.fish_19,
-                R.drawable.fish_20
-            )
+
+            var fishPics = listOf(R.drawable.fish_1, R.drawable.fish_2, R.drawable.fish_3, R.drawable.fish_4, R.drawable.fish_5, R.drawable.fish_6, R.drawable.fish_7, R.drawable.fish_8, R.drawable.fish_9, R.drawable.fish_10, R.drawable.fish_11, R.drawable.fish_12, R.drawable.fish_13, R.drawable.fish_14, R.drawable.fish_15, R.drawable.fish_16, R.drawable.fish_17, R.drawable.fish_18, R.drawable.fish_19, R.drawable.fish_20)
 
             // Insert Fishes into the list
             for (i in 1..40) {
@@ -114,5 +95,15 @@ class GameActivity : AppCompatActivity() {
         dialog.setCanceledOnTouchOutside(false)
         dialog.setCancelable(false)
         dialog.show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        finish();
+    }
+
+    override fun onPause() {
+        super.onPause()
+        finish();
     }
 }
